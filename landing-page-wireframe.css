@@ -1,0 +1,7 @@
+.lp-app-container {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  padding: 40px;
+  border: 1px solid gray
+}
