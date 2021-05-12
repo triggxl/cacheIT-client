@@ -4,7 +4,7 @@ import '../landing-page/landing-page.css';
 class landingPage extends Component {
   render() {
     return (
-      <div class="lp-app-container">
+      <div className="lp-app-container">
         <h1>Cache-IT</h1>
         <p>CacheIT is an application designed to log the errors you come across as a developer.<br />
       That way you are able to reference them in a purposeful and organized manner. <br />This helps us to better

@@ -10,6 +10,7 @@ import userPage from './components/user-page/user-page';
 import createNewCache from './components/create-cache/create-new-cache';
 import editCache from './components/edit-cache/edit-cache';
 import './App.css';
+import deleteCache from './components/delete-cache/delete-cache';
 
 class App extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class App extends React.Component {
         <div>
           <ul>
             <li>
-              <Link to="/">Welcome To Cache-IT!</Link>
+              <Link to="/">Cache-IT Welcome Page!</Link>
             </li>
             <li>
               <Link to="/user-page">User Page</Link>
@@ -29,15 +30,11 @@ class App extends React.Component {
             <li>
               <Link to="/edit-cache">Edit Cache (Modal)</Link>
             </li>
+            <li>
+              <Link to="/edit-cache">Delete Cache</Link>
+            </li>
           </ul>
           <hr />
-          {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
           <Switch>
             <Route exact path="/" component={landingPage}>
             </Route>
@@ -46,6 +43,8 @@ class App extends React.Component {
             <Route path="/create-new-cache" component={createNewCache}>
             </Route>
             <Route path="/edit-cache" component={editCache}>
+            </Route>
+            <Route path="/delete-cache" component={deleteCache}>
             </Route>
           </Switch>
         </div>
