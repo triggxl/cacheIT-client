@@ -1,0 +1,26 @@
+.cnc-container {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  max-width: 150vh;
+  padding: 40px;
+  border: 1px solid gray
+}
+
+.cnc-container > div {
+  border: 2px solid black;
+}
+
+form {
+  display: grid;
+  grid-gap: 20px;
+  margin: 100px;
+}
+
+.error-ref-snapshots {
+  border: 2px solid;
+  width: 200px;
+  height: 75px;
+}
+/* query at 846 */
