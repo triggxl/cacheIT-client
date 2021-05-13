@@ -3,48 +3,29 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import landingPage from './components/landing-page/landing-page';
-import userPage from './components/user-page/user-page';
-import createNewCache from './components/create-cache/create-new-cache';
-import editCache from './components/edit-cache/edit-cache';
+import UserPage from './components/user-page/user-page';
+import CreateNewCache from './components/create-cache/create-new-cache';
+import EditCache from './components/edit-cache/edit-cache';
 import './App.css';
-import deleteCache from './components/delete-cache/delete-cache';
+import DeleteCache from './components/delete-cache/delete-cache';
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <div>
-          <ul>
-            <li>
-              <Link to="/">Cache-IT Welcome Page!</Link>
-            </li>
-            <li>
-              <Link to="/user-page">User Page</Link>
-            </li>
-            <li>
-              <Link to="/create-new-cache">Create New Cache (Modal)</Link>
-            </li>
-            <li>
-              <Link to="/edit-cache">Edit Cache (Modal)</Link>
-            </li>
-            <li>
-              <Link to="/edit-cache">Delete Cache</Link>
-            </li>
-          </ul>
-          <hr />
           <Switch>
             <Route exact path="/" component={landingPage}>
             </Route>
-            <Route path="/user-page" component={userPage}>
+            <Route path="/user-page" component={UserPage}>
             </Route>
-            <Route path="/create-new-cache" component={createNewCache}>
+            <Route path="/create-new-cache" component={CreateNewCache}>
             </Route>
-            <Route path="/edit-cache" component={editCache}>
+            <Route path="/edit-cache/:id" component={EditCache}>
             </Route>
-            <Route path="/delete-cache" component={deleteCache}>
+            <Route path="/delete-cache/:id" component={DeleteCache}>
             </Route>
           </Switch>
         </div>
