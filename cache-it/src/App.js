@@ -36,7 +36,6 @@ class App extends React.Component {
     })
   }
   editCache = (revisedCache) => {
-    console.log(revisedCache)
     // how to edit an object from an array's state
     // make copy of state
     const cachesCopy = [...this.state.caches]
@@ -53,8 +52,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.caches)
-
     return (
       <Router>
         <div>

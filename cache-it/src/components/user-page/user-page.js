@@ -7,13 +7,12 @@ class UserPage extends Component {
     const { cacheList } = this.props;
     return (
       <>
-
         <div className="up-container">
           <h1>User Page</h1>
           <Link to="/">
             <h4>Home</h4>
           </Link>
-          <div className="header-background"> (placeholder for header background) </div>
+          <div> (placeholder for header background) </div>
           <div className="cache-container">
             <br />
             <h3>My Caches</h3>
@@ -21,12 +20,15 @@ class UserPage extends Component {
               <button className="new-cache">Add New Cache</button>
             </Link>
             {cacheList.map(cacheIssue => (
-              <section className="my-caches">
-                <div id="cache-1">
-                  <h3 className="title" >{cacheIssue.cncTitle}</h3>
-                  <p className="code-section" >{cacheIssue.cncCode}</p>
-                  <p className="cnc-notes" >{cacheIssue.cncNotes}</p>
-                  <p className="cnc-link" >{cacheIssue.cncLinks}</p>
+              <section className="my-caches" key={cacheIssue.Title}>
+                <div>
+                  <h2 className="title">{cacheIssue.cncTitle}</h2>
+                  <h4>Code:</h4>
+                  <p className="code-section">{cacheIssue.cncCode}</p>
+                  <h4>Notes:</h4>
+                  <p className="cnc-notes">{cacheIssue.cncNotes}</p>
+                  <h4>Links:</h4>
+                  <p className="cnc-link">{cacheIssue.cncLinks}</p>
                   <div className="up-buttons">
                     <Link to={`/edit-cache/${cacheIssue.id}`}>
                       <button className="edit-btn">Edit Cache</button>
