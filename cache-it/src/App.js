@@ -12,21 +12,82 @@ import './App.css';
 import DeleteCache from './components/delete-cache/delete-cache';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      caches: [
+        {
+          id: '123',
+          cncTitle: 'Error',
+          cncCode: 'aofdijaof',
+          cncNotes: 'afodijdoij',
+          cncLinks: 'aofdijafoeifej'
+
+        }
+      ]
+    }
+  }
+
+  addCache = (newCache) => {
+    console.log('add cache')
+    this.setState({
+      // create copy and add newCache obj
+      caches: [...this.state.caches, newCache]
+    })
+  }
+  editCache = (revisedCache) => {
+    console.log(revisedCache)
+    // how to edit an object from an array's state
+    // make copy of state
+    const cachesCopy = [...this.state.caches]
+    // find one to modify
+    let cacheIndex = cachesCopy.findIndex(cache => cache.id === revisedCache.id)
+    cachesCopy[cacheIndex] = revisedCache
+    // revise state (new state with )
+    this.setState({ caches: cachesCopy })
+  }
+  deleteCache = (id) => {
+    this.setState({
+      caches: this.state.caches.filter(cache => cache.id !== id)
+    })
+  }
+
   render() {
+    console.log(this.state.caches)
+
     return (
       <Router>
         <div>
           <Switch>
             <Route exact path="/" component={landingPage}>
             </Route>
-            <Route path="/user-page" component={UserPage}>
+            <Route
+              path="/user-page"
+              render={() => (
+                // name: function
+                <UserPage cacheList={this.state.caches} />
+              )}
+            >
             </Route>
-            <Route path="/create-new-cache" component={CreateNewCache}>
-            </Route>
-            <Route path="/edit-cache/:id" component={EditCache}>
-            </Route>
-            <Route path="/delete-cache/:id" component={DeleteCache}>
-            </Route>
+            <Route
+              path='/create-new-cache'
+              render={() => (
+                // name: function
+                <CreateNewCache submitNewCache={this.addCache} />
+              )}
+            />
+            <Route
+              path='/edit-cache/:id'
+              render={(routerProps) => (
+                <EditCache handleEditCache={this.editCache} editedCache={this.state.caches.find(cache => cache.id === routerProps.match.params.id)} />
+              )}
+            />
+            <Route
+              path='/delete-cache/:id'
+              render={(routerProps) => (
+                <DeleteCache handleDeleteCache={this.deleteCache} deletedCacheId={routerProps.match.params.id} />
+              )}
+            />
           </Switch>
         </div>
       </Router>

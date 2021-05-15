@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class DeleteCache extends Component {
-  render() {
-    const handleDeleteCache = () => {
-      // delete cache (use state)
-      // useHistory() to send to location
+  constructor(props) {
+    super(props);
+    this.state = {
+      cacheToBeDeleted: ''
     }
+  }
+  render() {
     return (
       <div>
         <p>This Cache will be deleted.</p>
         <Link to="/user-page">
           <button>Cancel</button>
         </Link>
-        <button onClick={handleDeleteCache}>Delete</button>
+        <button onClick={() => this.props.handleDeleteCache(this.props.deletedCacheId)}>Delete</button>
       </div>
     )
   }
