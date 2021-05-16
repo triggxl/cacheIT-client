@@ -7,7 +7,6 @@ class UserPage extends Component {
     const { cacheList } = this.props;
     return (
       <>
-
         <div className="up-container">
           <h1>User Page</h1>
           <Link to="/">
@@ -21,7 +20,7 @@ class UserPage extends Component {
               <button className="new-cache">Add New Cache</button>
             </Link>
             {cacheList.map(cacheIssue => (
-              <section className="my-caches">
+              <section key={cacheIssue.id} className="my-caches">
                 <div id="cache-1">
                   <h3 className="title" >{cacheIssue.cncTitle}</h3>
                   <p className="code-section" >{cacheIssue.cncCode}</p>

@@ -30,7 +30,7 @@ class CreateNewCache extends React.Component {
   }
   render() {
     if (this.state.redirect) {
-      return <Redirect to="user-page" />
+      return <Redirect push to="user-page" />
     }
     return (
       <>

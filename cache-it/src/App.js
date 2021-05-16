@@ -23,6 +23,22 @@ class App extends React.Component {
           cncNotes: 'afodijdoij',
           cncLinks: 'aofdijafoeifej'
 
+        },
+        {
+          id: '1234',
+          cncTitle: 'Error',
+          cncCode: 'aofdijaof',
+          cncNotes: 'afodijdoij',
+          cncLinks: 'aofdijafoeifej'
+
+        },
+        {
+          id: '12345',
+          cncTitle: 'Error',
+          cncCode: 'aofafdijaof',
+          cncNotes: 'afljfodijdoij',
+          cncLinks: 'ojiaofdijafoeifej'
+
         }
       ]
     }
@@ -50,11 +66,11 @@ class App extends React.Component {
     this.setState({
       caches: this.state.caches.filter(cache => cache.id !== id)
     })
+
   }
 
   render() {
     console.log(this.state.caches)
-
     return (
       <Router>
         <div>
@@ -72,7 +88,6 @@ class App extends React.Component {
             <Route
               path='/create-new-cache'
               render={() => (
-                // name: function
                 <CreateNewCache submitNewCache={this.addCache} />
               )}
             />
