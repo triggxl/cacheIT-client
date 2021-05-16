@@ -23,22 +23,6 @@ class App extends React.Component {
           cncNotes: 'afodijdoij',
           cncLinks: 'aofdijafoeifej'
 
-        },
-        {
-          id: '1234',
-          cncTitle: 'Error',
-          cncCode: 'aofdijaof',
-          cncNotes: 'afodijdoij',
-          cncLinks: 'aofdijafoeifej'
-
-        },
-        {
-          id: '12345',
-          cncTitle: 'Error',
-          cncCode: 'aofafdijaof',
-          cncNotes: 'afljfodijdoij',
-          cncLinks: 'ojiaofdijafoeifej'
-
         }
       ]
     }
