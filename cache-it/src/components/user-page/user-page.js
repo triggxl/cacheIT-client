@@ -19,9 +19,9 @@ class UserPage extends Component {
             <Link to="/create-new-cache">
               <button className="new-cache">Add New Cache</button>
             </Link>
-            {cacheList.map(cacheIssue => (
-              <section key={cacheIssue.id} className="my-caches">
-                <div id="cache-1">
+            <section className="my-caches">
+              {cacheList.map(cacheIssue => (
+                <div key={cacheIssue.id}>
                   <h3 className="title" >{cacheIssue.cncTitle}</h3>
                   <p className="code-section" >{cacheIssue.cncCode}</p>
                   <p className="cnc-notes" >{cacheIssue.cncNotes}</p>
@@ -35,8 +35,8 @@ class UserPage extends Component {
                     </Link>
                   </div>
                 </div>
-              </section>
-            ))}
+              ))}
+            </section>
           </div>
         </div>
       </>

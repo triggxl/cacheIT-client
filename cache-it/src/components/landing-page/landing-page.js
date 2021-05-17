@@ -15,7 +15,6 @@ class LandingPage extends Component {
         <Link to="/user-page">
           <button>Let's Get Started</button>
         </Link>
-        <p>(button routes to user page)</p>
       </div>
     )
   }
